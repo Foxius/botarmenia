@@ -20,7 +20,9 @@ colorama.init()
 # модуль конфигов
 config_dict = get_default_config()
 owm = OWM('d99de04f9c4d8f439d5149e9d7c689ff', config_dict)
-bot = telebot.TeleBot('5330875353:AAGDUvejYK-c574yK0igRYu46JfV9PEG_lw')
+########################################################################
+bot = telebot.TeleBot('3452345345:BGHLJbjhGJFYTIUvbuiGIYKbgjyFIYkyvuo')#
+########################################################################
 moderchatid = '-1001680279204'
 
 print(Fore.RED + 'Бот запускается...')
@@ -29,9 +31,11 @@ print(Fore.BLUE + 'Добро пожаловать, капитан!')
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
+	print(Fore.YELLOW + 'Использована команда: start')
 	bot.send_message(message.chat.id, "Добро Пожаловать", reply_markup=types.ReplyKeyboardRemove())
 @bot.message_handler(commands=['rates'])
 def rates(message):
+	print(Fore.YELLOW + 'Использована команда: rates')
 	AMD_RUB = 'https://www.google.com/search?q=dram+rubli&sxsrf=APq-WBsaGvvcDu6LhUgt1q7bIjaVSK3tyA%3A1650901995344&ei=68NmYv_UFPClrgTXxLHgDQ&oq=dram+&gs_lcp=Cgdnd3Mtd2l6EAMYADIPCAAQsQMQgwEQQxBGEIICMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgoILhDHARCjAhAnOgQIIxAnOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQowI6CAgAEIAEELEDOgsIABCABBAKEAEQKjoJCAAQgAQQChABOgkILhCABBAKEAE6CggAELEDEIMBEEM6BAgAEEM6BAguEEM6BwgjEOoCECc6DgguEIAEELEDEMcBEKMCOggILhCABBDUAjoGCCMQJxATOgcIABCxAxBDOgcILhCxAxBDOgoILhCxAxCDARBDSgQIQRgASgQIRhgAUABYrxVg1iBoBHABeACAAXCIAfoGkgEDNC41mAEAoAEBsAEKwAEB&sclient=gws-wiz'
 	RUB_AMD = 'https://www.google.com/search?q=rubli+dram&sxsrf=APq-WBu4-O_4-pQh80GnDlqjka7ofdQ73Q%3A1650903989881&source=hp&ei=tctmYuSkM7GOxc8Pp_umoAQ&iflsig=AHkkrS4AAAAAYmbZxYt8d79ipaJlGGU63bOsA18ZbEMv&oq=rubil+dra&gs_lcp=Cgdnd3Mtd2l6EAMYADIJCAAQDRBGEIICMgQIABANMgQIABANMgQIABANMgQIABANMgQIABANMgQIABANMgQIABANMgQIABANMgQIABANOgQIIxAnOg4ILhCABBCxAxDHARCjAjoICAAQgAQQsQM6BQgAEIAEOggILhCABBDUAjoGCCMQJxATOgsIABCABBCxAxCDAToRCC4QgAQQsQMQxwEQ0QMQ1AI6DgguEIAEELEDEMcBENEDOgsILhCABBCxAxCDAToICC4QgAQQsQM6BQguEIAEOgoILhCABBDUAhAKOgcIIxDqAhAnOhEILhCABBCxAxCDARDHARDRAzoLCC4QsQMQxwEQowI6CAgAELEDEIMBOhAIABCABBCHAhCxAxCDARAUOhUIABCABBCHAhCxAxCDARAUEEYQggI6CwguEIAEEMcBENEDOgsILhCABBCxAxDUAjoRCC4QgAQQsQMQgwEQxwEQrwE6FAguEIAEELEDEIMBEMcBENEDENQCOgcIABCABBAKOgoIABCxAxCDARAKOgcIABCxAxAKOgQIABAKOgYIABANEAo6CAgAEA0QChAeOgYIABAWEB46CAgAEBYQChAeOgoIABANEAUQChAeUABYkz1gi0doCXAAeACAAZoBiAHvC5IBAzcuN5gBAKABAbABCg&sclient=gws-wiz'
 	USD_RUB = 'https://www.google.com/search?q=usd+rub&sxsrf=APq-WBtHT3JXpjCC6U3ao5O63aTM5WzAOg%3A1650904244105&ei=tMxmYqGSBuOqrgSyyovYBA&ved=0ahUKEwihvJzI0a_3AhVjlYsKHTLlAksQ4dUDCA0&uact=5&oq=usd+rub&gs_lcp=Cgdnd3Mtd2l6EAMyCQgjECcQRhCCAjIICAAQgAQQsQMyCggAELEDEIMBEEMyBQgAEIAEMgUIABCABDIKCAAQgAQQhwIQFDIKCAAQgAQQhwIQFDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCAAQRxCwAzoECCMQJzoECAAQQzoMCCMQsQIQJxBGEIICOgcIABCxAxAKOgQIABAKSgQIQRgASgQIRhgAUPgCWOwJYIgMaAJwAXgAgAF0iAGHA5IBAzMuMZgBAKABAcgBCMABAQ&sclient=gws-wiz'
@@ -44,7 +48,6 @@ def rates(message):
 	BTC_RUB = 'https://www.google.com/search?q=btc+rub&sxsrf=APq-WBut5HbkXibcZL5npAkooHT8gRUoRg%3A1651082286282&ei=LoRpYr_zEKGrrgT7moPQCg&ved=0ahUKEwi_wqzp6LT3AhWhlYsKHXvNAKoQ4dUDCA0&uact=5&oq=btc+rub&gs_lcp=Cgdnd3Mtd2l6EAMyDwgAELEDEIMBEEMQRhCCAjIKCAAQgAQQhwIQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIIxCwAxAnOgcIABBHELADOhIILhDHARDRAxDIAxCwAxBDGAE6BAgjECc6CwgAEIAEELEDEIMBOggIABCABBCxAzoECAAQQzoQCAAQgAQQhwIQsQMQgwEQFDoHCAAQgAQQCkoECEEYAEoECEYYAFCWBFizDGD0D2gBcAF4AIABZ4gBrQSSAQM0LjKYAQCgAQHIAQvAAQHaAQQIARgI&sclient=gws-wiz'
 	# Заголовки для передачи вместе с URL
 	headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.72'}
-	pageAR = requests.get(AMD_RUB, headers=headers)
 	pageRA = requests.get(RUB_AMD, headers=headers)
 	pageUR = requests.get(USD_RUB, headers=headers)
 	pageUA = requests.get(USD_AMD, headers=headers)
@@ -128,6 +131,7 @@ def rates(message):
 
 @bot.message_handler(commands=['weather'])
 def weather(message):
+	print(Fore.YELLOW + 'Использована команда: weather')
 	owm = OWM('d99de04f9c4d8f439d5149e9d7c689ff', config_dict)
 	bot = telebot.TeleBot('5330875353:AAGDUvejYK-c574yK0igRYu46JfV9PEG_lw')
 	place = 'Ереван'
@@ -188,6 +192,7 @@ def weather(message):
 		bot.send_photo(message.chat.id, photo, caption=textweather, parse_mode="Markdown", reply_markup=types.ReplyKeyboardRemove())
 @bot.message_handler(commands=['faq'])
 def faq(message):
+	print(Fore.YELLOW + 'Использована команда: faq')
 	bot.send_message(message.chat.id, """
 	***Список всех полезных FAQ и материалов в одном месте:***\n
 	[1) Выбор банка и открытие счета. Плюсы, минусы и особенности.](https://t.me/RelocaterInfo_am_chat/48)\n
@@ -213,6 +218,7 @@ def faq(message):
 
 @bot.message_handler(commands=['help'])
 def help(message):
+	print(Fore.YELLOW + 'Использована команда: help')
 	bot.send_message(message.chat.id, text=f"""
 	***Список команд***:
 
